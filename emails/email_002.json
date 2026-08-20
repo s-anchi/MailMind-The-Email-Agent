@@ -1,0 +1,7 @@
+{
+  "id": "email_002",
+  "from": "billing@electricity-provider.com",
+  "subject": "Your bill is overdue",
+  "body": "Your electricity bill of $84.50 was due on Aug 15. Please pay immediately to avoid disconnection.",
+  "received_at": "2026-08-19T10:03:00"
+}
