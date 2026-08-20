@@ -89,4 +89,4 @@ Once this feels solid:
 - **Level 6 — Multi-agent**: a supervisor routes work to specialized
   Email / Calendar / Task agents.
 
-Say the word when you're ready for Level 2 and I'll build it on top of this.
+
