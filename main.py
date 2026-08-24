@@ -12,7 +12,7 @@ import os
 import sys
 
 from classifier import classify_email
-from ollama_client import OllamaError, OLLAMA_MODEL
+from groq_client import GroqError, GROQ_MODEL
 
 EMAILS_DIR = os.path.join(os.path.dirname(__file__), "emails")
 RESULTS_PATH = os.path.join(os.path.dirname(__file__), "results.json")
@@ -35,7 +35,7 @@ def main():
         print(f"No emails found in {EMAILS_DIR}")
         return
 
-    print(f"Using model: {OLLAMA_MODEL}")
+    print(f"Using model: {GROQ_MODEL}")
     print(f"Loaded {len(emails)} emails from fake inbox\n")
     print("-" * 70)
 
@@ -44,7 +44,7 @@ def main():
         print(f"Processing {email['id']}: \"{email['subject']}\"...")
         try:
             classification = classify_email(email)
-        except OllamaError as e:
+        except GroqError as e:
             print(f"  ERROR: {e}")
             sys.exit(1)
 

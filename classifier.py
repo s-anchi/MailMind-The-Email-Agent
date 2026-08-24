@@ -9,7 +9,7 @@ This is deliberately the *simplest* possible agent: one LLM call, no tools,
 no memory. Levels 2+ build on top of this.
 """
 
-from ollama_client import generate_json
+from groq_client import generate_json
 
 CATEGORIES = ["Work", "Personal", "Finance", "Job", "Newsletter", "Spam"]
 

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "email_001",
+    "from": "hr@techcorp.com",
+    "subject": "Interview Discussion",
+    "body": "Hi Sanchitha, can we schedule a call tomorrow at 3 PM to discuss the project?",
+    "received_at": "2026-08-19T09:12:00",
+    "category": "Job",
+    "urgency": "High",
+    "action_required": true,
+    "reasoning": "The email is about scheduling a job interview call tomorrow."
+  },
+  {
+    "id": "email_002",
+    "from": "billing@electricity-provider.com",
+    "subject": "Your bill is overdue",
+    "body": "Your electricity bill of $84.50 was due on Aug 15. Please pay immediately to avoid disconnection.",
+    "received_at": "2026-08-19T10:03:00",
+    "category": "Finance",
+    "urgency": "High",
+    "action_required": true,
+    "reasoning": "Billing email demanding immediate payment to avoid disconnection."
+  },
+  {
+    "id": "email_003",
+    "from": "newsletter@techdigest.com",
+    "subject": "This Week in AI: 10 Stories You Missed",
+    "body": "Here's your weekly roundup of the top AI news, research papers, and product launches.",
+    "received_at": "2026-08-19T07:00:00",
+    "category": "Newsletter",
+    "urgency": "Low",
+    "action_required": false,
+    "reasoning": "Weekly AI roundup newsletter with no immediate action required."
+  },
+  {
+    "id": "email_004",
+    "from": "rahul.mehta@partnerco.com",
+    "subject": "Updated report",
+    "body": "Hi, as discussed last week, please send the updated report to John by end of day Friday.",
+    "received_at": "2026-08-19T11:45:00",
+    "category": "Work",
+    "urgency": "High",
+    "action_required": true,
+    "reasoning": "Work email with a deadline."
+  },
+  {
+    "id": "email_005",
+    "from": "mom@familymail.com",
+    "subject": "Sunday lunch?",
+    "body": "Hey, are you free for lunch this Sunday? Let me know so I can plan.",
+    "received_at": "2026-08-19T12:30:00",
+    "category": "Personal",
+    "urgency": "Low",
+    "action_required": true,
+    "reasoning": "A family invitation to lunch."
+  },
+  {
+    "id": "email_006",
+    "from": "prizes@luckywinner-rewards.biz",
+    "subject": "YOU HAVE WON $1,000,000!!!",
+    "body": "CONGRATULATIONS! You have been selected as our lucky winner. Click here to claim your prize now before it expires!",
+    "received_at": "2026-08-19T13:02:00",
+    "category": "Spam",
+    "urgency": "High",
+    "action_required": false,
+    "reasoning": "Suspicious prize email typical of spam."
+  }
+]
