@@ -1,0 +1,30 @@
+{
+  "thread_id": "thread_001",
+  "subject": "Client Demo - Friday",
+  "messages": [
+    {
+      "id": "msg_001",
+      "from": "rahul@partnerco.com",
+      "body": "Hi team, the client demo is confirmed for Friday at 3 PM. Rahul, can you finish the API integration before then?",
+      "received_at": "2026-08-24T09:00:00"
+    },
+    {
+      "id": "msg_002",
+      "from": "rahul@partnerco.com",
+      "body": "Yes, I'll complete the API integration by Wednesday.",
+      "received_at": "2026-08-24T10:15:00"
+    },
+    {
+      "id": "msg_003",
+      "from": "sanchitha@company.com",
+      "body": "I'll update the presentation once the API is ready. I'll have it ready by Thursday.",
+      "received_at": "2026-08-24T11:30:00"
+    },
+    {
+      "id": "msg_004",
+      "from": "priya@partnerco.com",
+      "body": "Great. I'll confirm the client's final attendee list before Friday.",
+      "received_at": "2026-08-24T12:00:00"
+    }
+  ]
+}

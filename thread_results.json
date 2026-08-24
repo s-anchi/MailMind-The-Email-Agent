@@ -1,0 +1,77 @@
+[
+  {
+    "thread_id": "thread_001",
+    "subject": "Client Demo - Friday",
+    "summary": "The team confirmed a client demo on Friday at 3 PM. Rahul is tasked with completing the API integration, Sanchitha will update the presentation once the API is ready, and Priya will confirm the attendee list before Friday. Rahul also committed to finish the integration by Wednesday, earlier than the demo deadline.",
+    "people": [
+      {
+        "name": "Rahul",
+        "email": "rahul@partnerco.com",
+        "role": "Developer"
+      },
+      {
+        "name": "Sanchitha",
+        "email": "sanchitha@company.com",
+        "role": "Presenter"
+      },
+      {
+        "name": "Priya",
+        "email": "priya@partnerco.com",
+        "role": "Coordinator"
+      }
+    ],
+    "action_items": [
+      {
+        "task": "Finish API integration",
+        "owner": "Rahul",
+        "deadline": "Friday at 3 PM",
+        "status": "pending"
+      },
+      {
+        "task": "Finish API integration",
+        "owner": "Rahul",
+        "deadline": "Wednesday",
+        "status": "pending"
+      },
+      {
+        "task": "Update presentation once API is ready",
+        "owner": "Sanchitha",
+        "deadline": "Thursday",
+        "status": "pending"
+      },
+      {
+        "task": "Confirm client's final attendee list",
+        "owner": "Priya",
+        "deadline": "Friday",
+        "status": "pending"
+      }
+    ],
+    "deadlines": [
+      {
+        "description": "API integration completion",
+        "date": "Friday at 3 PM",
+        "owner": "Rahul"
+      },
+      {
+        "description": "API integration completion",
+        "date": "Wednesday",
+        "owner": "Rahul"
+      },
+      {
+        "description": "Presentation update",
+        "date": "Thursday",
+        "owner": "Sanchitha"
+      },
+      {
+        "description": "Attendee list confirmation",
+        "date": "Friday",
+        "owner": "Priya"
+      }
+    ],
+    "decisions": [
+      "Client demo confirmed for Friday at 3 PM"
+    ],
+    "pending_questions": [],
+    "priority": "High"
+  }
+]

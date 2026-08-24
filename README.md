@@ -1,92 +1,103 @@
-# AI Email Management Agent — Level 1
+# ✦ MailMind — AI Email Management Agent
 
-A fake-inbox email classifier agent running on a **local model via Ollama**.
-No API keys, no real inbox risk — you can break things freely.
+An AI-powered email management agent that turns email conversations into
+structured information and actionable tasks.
 
-## What it does
+MailMind starts with a simple email classifier and progressively evolves
+into an agent capable of understanding complete email threads, extracting
+action items and deadlines, generating calendar events, and drafting
+follow-up emails.
 
-For every email in `emails/`, the agent decides:
-- **category**: Work / Personal / Finance / Job / Newsletter / Spam
-- **urgency**: Low / Medium / High
-- **action_required**: true/false
-- **reasoning**: one-sentence explanation
+The project is intentionally built in levels so that each stage teaches a
+different concept in Agentic AI.
 
-This is intentionally the simplest possible agent — one LLM call per email,
-no tools, no memory yet. Levels 2+ (summarizer, tool calling, autonomous
-workflow, memory, multi-agent) build on top of this foundation.
+---
 
-## Setup
+## 🚀 Current Capabilities
 
-### 1. Install Ollama
-Download from https://ollama.com (Mac/Windows/Linux all supported).
+### Level 1 — Email Triage
 
-### 2. Pull a model
-```bash
-ollama pull llama3.1:8b
-```
-Any instruction-tuned model works — `qwen2.5:7b` and `mistral:7b` are good
-alternatives if `llama3.1:8b` is too slow/large for your machine. Smaller
-models (`llama3.2:3b`) will run faster but classify less reliably.
+Classifies individual emails based on:
 
-### 3. Start Ollama (if not already running as a service)
-```bash
-ollama serve
-```
+- **Category** — Work / Personal / Finance / Job / Newsletter / Spam
+- **Urgency** — Low / Medium / High
+- **Action Required** — true / false
+- **Reasoning** — one-sentence explanation
 
-### 4. Install Python dependencies
-```bash
-pip install -r requirements.txt
-```
+### Agent Architecture
+                    ┌──────────────────┐
+                    │    Email Inbox   │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                 ┌──────────────────────┐
+                 │   Email Classifier   │
+                 │       Level 1       │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+                 ┌──────────────────────┐
+                 │   Email Threads     │
+                 │       Level 2       │
+                 └──────────┬───────────┘
+                            │
+                            ▼
+              ┌─────────────────────────────┐
+              │    Thread Summarizer        │
+              │                             │
+              │ • Summary                   │
+              │ • People                    │
+              │ • Action Items              │
+              │ • Deadlines                 │
+              │ • Decisions                 │
+              │ • Pending Questions         │
+              │ • Priority                  │
+              └──────────────┬──────────────┘
+                             │
+                ┌────────────┴────────────┐
+                │                         │
+                ▼                         ▼
+       ┌─────────────────┐       ┌──────────────────┐
+       │ Calendar Action │       │ Follow-up Agent  │
+       │                 │       │                  │
+       │ Generate .ics   │       │ Draft email      │
+       └─────────────────┘       └──────────────────┘
 
-### 5. Run the agent
-```bash
-python main.py
-```
+---
 
-## Configuration
+### Level 2 — Thread Intelligence
 
-Environment variables (optional):
-- `OLLAMA_HOST` — default `http://localhost:11434`
-- `OLLAMA_MODEL` — default `llama3.1:8b`
+Instead of analyzing a single email, MailMind can analyze an entire
+conversation thread.
 
-Example using a different model:
-```bash
-OLLAMA_MODEL=qwen2.5:7b python main.py
-```
+It extracts:
 
-## Project structure
+- **Thread summary**
+- **People involved**
+- **Action items**
+- **Action owners**
+- **Deadlines**
+- **Decisions**
+- **Pending questions**
+- **Priority**
 
-```
-email-agent/
-├── emails/              # fake inbox — 6 sample emails covering every category
-│   ├── email_001.json
-│   └── ...
-├── ollama_client.py      # HTTP wrapper around local Ollama API, forces JSON output
-├── classifier.py         # the actual "agent" — one function, one LLM call
-├── main.py                # loads inbox, runs classifier, prints + saves results
-├── requirements.txt
-└── results.json           # generated after running — full classification output
-```
+Example:
 
-## Try it yourself
+```text
+Thread:
+"Client Demo Preparation"
 
-- Add your own email to `emails/` (copy the JSON shape) and re-run.
-- Try a smaller/larger model and compare classification quality.
-- Break the JSON parsing on purpose (lower-quality model) and watch the
-  retry logic in `ollama_client.py` kick in.
+AI Summary:
+The team is preparing for a client demo scheduled for Friday.
 
-## What's next (Level 2+)
+Action Items:
+• Rahul → Complete API integration → Wednesday
+• Sanchitha → Update presentation → Thursday
+• Priya → Confirm attendees → Before Friday
 
-Once this feels solid:
-- **Level 2 — Summarizer**: feed it a long thread instead of one email,
-  extract action items / deadlines / people involved.
-- **Level 3 — Tool calling**: give the agent `search_emails()`,
-  `create_task()`, `search_calendar()` and let it decide when to call them.
-- **Level 4 — Autonomous workflow**: "Schedule a meeting with Rahul next
-  week" → agent chains multiple tool calls together.
-- **Level 5 — Memory**: agent remembers preferences ("Rahul prefers
-  afternoon meetings") across runs.
-- **Level 6 — Multi-agent**: a supervisor routes work to specialized
-  Email / Calendar / Task agents.
+Decision:
+• Client demo confirmed for Friday at 3 PM.
 
+Priority:
+High
 
